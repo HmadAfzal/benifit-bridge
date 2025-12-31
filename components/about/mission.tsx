@@ -26,9 +26,9 @@ const Mission = () => {
               engaged and empowered professional.
             </p>
             <div className="pt-8">
-              <Link href={'/employee-benifits'}>
+              <Link href={'/partnerships'}>
                 <Button size="lg" variant="outline" className=" px-8 bg-transparent">
-                  Employee Benifits <ArrowRight className="ml-2 w-4 h-4" />
+                  Partnerships <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
             </div>

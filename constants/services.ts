@@ -16,6 +16,7 @@ import {
 
 export interface Service {
   id: string
+  type: string
   title: string
   description: string
   longDescription: string
@@ -28,6 +29,7 @@ export interface Service {
 export const services: Service[] = [
   {
     id: "mortgage",
+    type:"mortgage",
     title: "Mortgage Services",
     description: "Expert guidance on residential mortgages tailored to your financial situation.",
     longDescription:
@@ -58,6 +60,7 @@ export const services: Service[] = [
   },
   {
     id: "remortgage",
+    type:"mortgage",
     title: "Remortgage",
     description: "Switch to a better deal and potentially save thousands with our advisory services.",
     longDescription:
@@ -77,6 +80,7 @@ export const services: Service[] = [
   },
   {
     id: "buy-to-let",
+    type:"mortgage",
     title: "Buy to Let",
     description: "Build your property portfolio with specialist buy-to-let mortgage solutions.",
     longDescription:
@@ -92,6 +96,7 @@ export const services: Service[] = [
   },
   {
     id: "first-time-buyer",
+    type:"mortgage",
     title: "First Time Buyer",
     description: "Step onto the property ladder with confidence. We guide you through every step.",
     longDescription:
@@ -111,6 +116,7 @@ export const services: Service[] = [
   },
   {
     id: "residential-protection",
+    type:"cover-protection",
     title: "Residential Protection",
     description: "Safeguard your home and family with comprehensive insurance cover.",
     longDescription:
@@ -126,6 +132,7 @@ export const services: Service[] = [
   },
   {
     id: "residential-mortgage",
+    type:"mortgage",
     title: "Residential Mortgage",
     description: "Secure competitive rates on residential mortgages with exclusive deals.",
     longDescription:
@@ -141,6 +148,7 @@ export const services: Service[] = [
   },
   {
     id: "relevant-life",
+    type:"cover-protection",
     title: "Relevant Life Plan",
     description: "Tax-efficient life insurance for business owners and employees.",
     longDescription:
@@ -156,6 +164,7 @@ export const services: Service[] = [
   },
   {
     id: "business-mortgage",
+    type:"mortgage",
     title: "Business Mortgages",
     description: "Commercial property financing for business premises and investments.",
     longDescription:
@@ -175,6 +184,7 @@ export const services: Service[] = [
   },
   {
     id: "income-protection",
+    type:"cover-protection",
     title: "Income Protection",
     description: "Secure your monthly income if you're unable to work due to illness or injury.",
     longDescription:
@@ -201,6 +211,7 @@ export const services: Service[] = [
   },
   {
     id: "life-insurance",
+    type:"cover-protection",
     title: "Life Insurance",
     description: "Provide a lump sum to your loved ones, ensuring their financial security.",
     longDescription:
@@ -222,6 +233,7 @@ export const services: Service[] = [
   },
   {
     id: "critical-illness",
+    type:"cover-protection",
     title: "Critical Illness",
     description: "Financial support following the diagnosis of a serious health condition.",
     longDescription:
@@ -244,6 +256,7 @@ export const services: Service[] = [
   },
   {
     id: "home-insurance",
+    type:"cover-protection",
     title: "Home Insurance",
     description: "Comprehensive buildings and contents cover for your property.",
     longDescription:

@@ -14,9 +14,9 @@ const Cta = () => {
                Discover how our mortgage and financial planning service can enhance your existing employee approach benefits and support your workforce’s financial wellbeing.
               </p>
               <div className="flex flex-wrap gap-4">
-                 <Link href={"/employee-benifits"}>
+                 <Link href={"/partnerships"}>
                 <Button size="lg" variant="secondary" className=" px-8 h-14 text-base font-semibold">
-                Employee Benifits
+                Partnerships
                 </Button>
                 </Link>
                  <Link href={"/contact-us"}>

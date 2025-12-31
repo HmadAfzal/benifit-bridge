@@ -26,8 +26,8 @@ const Featured = () => {
                 </div>
               </div>
               <Button variant="ghost" className="p-0 hover:bg-transparent text-secondary font-bold group">
-                <Link href={"/employee-benifits"} className='flex items-center justify-center'>
-                 LEARN MORE ABOUT EMPLOYEE BENIFITS{" "}
+                <Link href={"/partnerships"} className='flex items-center justify-center'>
+                 LEARN MORE ABOUT PARTNERSHIPS{" "}
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

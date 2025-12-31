@@ -12,7 +12,7 @@ interface HeroProps {
     text: string;
     url: string;
   };
-    button2?: {
+  button2?: {
     text: string;
     url: string;
   };
@@ -32,7 +32,7 @@ const Hero = ({
     text: "View Services",
     url: "/#services",
   },
-    button2 = {
+  button2 = {
     text: "Contact Us",
     url: "/contact-us",
   },
@@ -73,14 +73,14 @@ const Hero = ({
           </p>
         </div>
         <div className="space-x-3">
-<Button className="mt-5" variant={'secondary'}>
-          <a href={button.url}>{button.text}</a>
-        </Button>
-         <Button className="mt-5" variant={'default'}>
-          <a href={button2.url}>{button2.text}</a>
-        </Button>
+          <Button className="mt-5" variant={'secondary'}>
+            <a href={button.url}>{button.text}</a>
+          </Button>
+          <Button className="mt-5" variant={'default'}>
+            <a href={button2.url}>{button2.text}</a>
+          </Button>
         </div>
-        
+
         <div className="mx-auto mt-10 flex w-fit flex-col items-center gap-4 sm:flex-row">
           <span className="mx-4 inline-flex items-center -space-x-4">
             {reviews.avatars.map((avatar, index) => (

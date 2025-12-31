@@ -5,21 +5,20 @@ import Link from 'next/link'
 
 const Callout = () => {
   return (
-    <section className="py-20">
+    <section id='newman' className="py-20">
       <div className="container">
         <div className=" mx-auto bg-background rounded-xl p-8 md:p-16 shadow-lg border border-border/50 relative overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold uppercase tracking-wider">
                 <UserCheck className="w-3 h-3" />
-                For Business Owners
+                NEWMAN
               </div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-pretty">
-                Desire Peace-of-Mind While You Grow?
+              Newmans Lettings
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Business protection, employee life assurance, and business finance products help provide freedom from
-                the stress of running your business while achieving further success.
+               As trusted mortgage professionals, we understand the property market inside out and our collaboration with Newmans Lettings means you benefit from a seamless, joined-up service. We&apos;re on hand to offer clear, honest advice and source the best mortgage solutions to match your needs. Ready to get started? Simply fill out the contact form below, and one of our experts will be in touch shortly.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href={"/contact-us"}>

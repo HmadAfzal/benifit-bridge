@@ -4,16 +4,12 @@ export const NAV_LINKS = [
         href: "/"
     },
     {
-        name: "Services",
+        name: "Benefit Bridge",
         href: "#"
     },
     {
-        name: "Employee Benifits",
-        href: "/employee-benifits"
-    },
-    {
-        name: "About US",
-        href: "/about"
+        name: "Services",
+        href: "/partnerships"
     },
     {
         name: "Contact Us",
