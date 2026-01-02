@@ -46,7 +46,9 @@ export default function MortgageServicesPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {mortgageservices.map((service, index) => (
+                <Link key={index} href={`/mortgage-services/${service.id}`}>
               <ServiceCard key={index} {...service} />
+              </Link>
             ))}
           </div>
         </div>
@@ -127,7 +129,7 @@ export default function MortgageServicesPage() {
             {coverprotection
               .map((s, index) => {
                 return (
-                  <Link key={index} href={`/services/${index}`}>
+                 <Link key={index} href={`/cover-protection-services/${s.id}`}>
                     <Card className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100 group hover:shadow-xl hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
                       <CardContent className="p-8">
                         <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
