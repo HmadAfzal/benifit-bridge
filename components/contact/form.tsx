@@ -1,156 +1,179 @@
-'use client'
-import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Card, CardContent } from "../ui/card"
+"use client"
+
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { toast } from "sonner"
-import { Send } from "lucide-react"
-
+import { Button } from "@/components/ui/button"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Textarea } from "@/components/ui/textarea"
 
 const formSchema = z.object({
-    name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-    email: z.string().email({ message: "Please enter a valid email address." }),
-    phone: z.string().min(10, { message: "Please enter a valid phone number." }),
-    subject: z.string().min(1, { message: "Please select a subject." }),
-    message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  firstName: z.string().min(2, { message: "First name is required." }),
+  lastName: z.string().min(2, { message: "Last name is required." }),
+  companyName: z.string().min(2, { message: "Company name is required." }),
+  contactNumber: z.string().min(10, { message: "Contact number is required." }),
+  businessEmail: z.string().email({ message: "Invalid email address." }),
+  employeeCount: z.string().optional(),
+  query: z.string().min(10, { message: "Please provide a description." }),
 })
 
-const ContactForm = () => {
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            name: "",
-            email: "",
-            phone: "",
-            subject: "",
-            message: "",
-        },
-    })
+export function ContactForm() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      companyName: "",
+      contactNumber: "",
+      businessEmail: "",
+      employeeCount: "",
+      query: "",
+    },
+  })
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log("[v0] Contact form submitted:", values)
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log("Contact Form Submission:", values)
+  }
 
-        toast.success("Message sent successfully!", {
-            description: "Our team will get back to you within 24 hours.",
-        })
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+          <FormField
+            control={form.control}
+            name="firstName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="font-bold">
+                  First Name<span className="text-red-500">*</span>
+                </FormLabel>
+                <FormControl>
+                  <Input {...field} className="border border-border" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="lastName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="font-bold">
+                  Last Name<span className="text-red-500">*</span>
+                </FormLabel>
+                <FormControl>
+                  <Input {...field} className="border border-border" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="companyName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="font-bold">
+                  Company Name<span className="text-red-500">*</span>
+                </FormLabel>
+                <FormControl>
+                  <Input {...field} className="border border-border" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="contactNumber"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="font-bold">
+                  Contact Number<span className="text-red-500">*</span>
+                </FormLabel>
+                <FormControl>
+                  <Input {...field} className="border border-border" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="businessEmail"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="font-bold">
+                  Email<span className="text-red-500">*</span>
+                </FormLabel>
+                <FormControl>
+                  <Input {...field} type="email" className="border border-border" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="employeeCount"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="font-bold">Number of employees</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger className="border border-border">
+                      <SelectValue placeholder="Please Select" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="1-10">1-10</SelectItem>
+                    <SelectItem value="11-50">11-50</SelectItem>
+                    <SelectItem value="51-200">51-200</SelectItem>
+                    <SelectItem value="201-500">201-500</SelectItem>
+                    <SelectItem value="500+">500+</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
-        form.reset()
-    }
-    return (
-        <Card className="border border-border/50 shadow-xl rounded-xl overflow-hidden bg-card">
-            <CardContent className="p-8 md:p-10">
-                <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
-                <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <FormField
-                                control={form.control}
-                                name="name"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Full Name</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                placeholder="John Doe"
-                                                {...field}
-                                                className="bg-muted/50 border-none h-12 rounded-xl focus-visible:ring-primary/20"
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="email"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Email Address</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                placeholder="john@company.com"
-                                                {...field}
-                                                className="bg-muted/50 border-none h-12 rounded-xl focus-visible:ring-primary/20"
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <FormField
-                                control={form.control}
-                                name="phone"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Phone Number</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                placeholder="07123 456 789"
-                                                {...field}
-                                                className="bg-muted/50 border-none h-12 rounded-xl focus-visible:ring-primary/20"
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="subject"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Subject</FormLabel>
-                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                            <FormControl>
-                                                <SelectTrigger className="bg-muted/50 border-none h-12 rounded-xl focus-visible:ring-primary/20 w-full">
-                                                    <SelectValue placeholder="Select a subject" />
-                                                </SelectTrigger>
-                                            </FormControl>
-                                            <SelectContent>
-                                                <SelectItem value="mortgage">Mortgage Advice</SelectItem>
-                                                <SelectItem value="benefits">Employee Benefits</SelectItem>
-                                                <SelectItem value="protection">Protection & Insurance</SelectItem>
-                                                <SelectItem value="other">General Inquiry</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
-                        <FormField
-                            control={form.control}
-                            name="message"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Your Message</FormLabel>
-                                    <FormControl>
-                                        <Textarea
-                                            placeholder="Tell us how we can help you..."
-                                            {...field}
-                                            className="bg-muted/50 border-none min-h-[150px] rounded-xl focus-visible:ring-primary/20 resize-none"
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <Button type="submit" className="w-full h-14 rounded-xl text-lg font-bold group" size="lg">
-                            Send Message{" "}
-                            <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                        </Button>
-                    </form>
-                </Form>
-            </CardContent>
-        </Card>
-    )
+        <FormField
+          control={form.control}
+          name="query"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="font-bold">
+                Message
+              </FormLabel>
+              <FormControl>
+                <Textarea {...field} className="min-h-[120px] border border-border" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Benefit Bridge needs the contact information you provide to us to contact you about our products and
+          services. For information on our privacy practices and commitment to protecting your privacy, please review our{" "}
+          <a href="#" className="text-brand-blue underline hover:no-underline transition-all">
+            Privacy Policy
+          </a>
+          .
+        </p>
+
+        <Button
+          type="submit"
+          className="px-10 py-6 rounded-[4px] font-bold text-lg"
+        >
+          Submit
+        </Button>
+      </form>
+    </Form>
+  )
 }
-
-export default ContactForm

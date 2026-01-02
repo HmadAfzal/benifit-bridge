@@ -1,10 +1,10 @@
 import type React from "react"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist_Mono,Roboto } from "next/font/google"
 import "./globals.css"
 import  Navbar  from "@/components/navigation/navbar"
 import { Footer } from "@/components/navigation/footer"
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
+const geist = Roboto({ subsets: ["latin"], variable: "--font-sans" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export default function RootLayout({

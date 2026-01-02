@@ -8,8 +8,12 @@ export const NAV_LINKS = [
         href: "#"
     },
     {
-        name: "Services",
-        href: "/partnerships"
+        name: "Mortgage Services",
+        href: "#"
+    },
+    {
+        name: "Cover & Protection",
+        href: "#"
     },
     {
         name: "Contact Us",

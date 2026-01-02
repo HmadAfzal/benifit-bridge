@@ -1,40 +1,58 @@
-"use client"
-
-import { Badge } from "@/components/ui/badge"
-import ContactForm from "@/components/contact/form"
-import ContactDetails from "@/components/contact/contact-details"
-
+import { ContactForm } from "@/components/contact/form";
 
 export default function ContactPage() {
-
-
   return (
-    <div className="w-full flex flex-col items-center">
-      {/* Hero Header */}
-      <section className="lg:pt-28 md:pt-16 pt-12 pb-16 px-4 md:px-6 w-full max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto">
-          <Badge variant="secondary" className="mb-4">
-            CONTACT US
-          </Badge>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            We're here to help you bridge the gap.
+    <main className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-primary py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white   tracking-tight mb-12">
+            Benifit Bridge – get in touch
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Have questions about our employee benefits or mortgage advice? Reach out to our UK-based experts today.
-          </p>
+          <div className="relative aspect-[21/9] w-full overflow-hidden rounded-sm">
+            <img
+              src="/collegues.jpg"
+              alt="Colleagues discussing documents"
+              className="object-cover w-full h-full object-top"
+            />
+          </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="pb-24 px-4 md:px-6 w-full max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Details */}
-          <ContactDetails />
+      {/* Intro Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl space-y-8">
+            <h2 className="text-4xl md:text-5xl text-brand-dark   leading-tight">
+              Let&apos;s talk employee benefits
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Have questions about how to build, optimise or manage your employee benefits programme? Fill out the form
+              below and one of our experts will reach out to you to:
+            </p>
+            <ul className="list-disc pl-5 space-y-4 text-brand-dark">
+              <li>
+                
+                Explore tailored solutions to support your team
+              </li>
+              <li>
+                Help with benefits design, benchmarking or administration
+              </li>
+              <li>
+                Discuss how we can align benefits with your business goals
+              </li>
+            </ul>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              We look forward to helping you deliver a benefits offering that works - for your people and for your
+              organisation.
+            </p>
+          </div>
 
-          {/* Contact Form */}
-          <ContactForm />
+          <div className="mt-16 max-w-4xl">
+            <ContactForm />
+          </div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
