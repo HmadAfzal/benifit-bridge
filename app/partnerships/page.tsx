@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import Link from "next/link"
 
 const PARTNERS = [
   { name: "Partner 1", logo: "/1.jpeg" },
@@ -63,10 +64,12 @@ export default function PartnershipsPage() {
                   Discover how our mortgage and cover and protection service can enhance your existing employee approach
                   benefits and support your workforce's financial wellbeing.
                 </p>
+                <Link href={'/contact-us'}>
                 <Button variant={'outline'} className="px-8 py-4 text-lg h-auto rounded-md group font-medium">
                   Contact Us today to learn more
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
+                 </Link>
               </div>
             </div>
           </div>
