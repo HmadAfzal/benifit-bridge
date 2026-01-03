@@ -8,11 +8,7 @@ export const NAV_LINKS = [
         href: "#"
     },
     {
-        name: "Mortgage Services",
-        href: "#"
-    },
-    {
-        name: "Cover & Protection",
+        name: "Services",
         href: "#"
     },
     {

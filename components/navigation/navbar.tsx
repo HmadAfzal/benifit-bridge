@@ -56,7 +56,6 @@ const Navbar = () => {
                                       className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors`}
                                     >
                                       <div className="flex items-center gap-2">
-                                        <HandHeart className="h-4 w-4" />
                                         <div className="text-sm font-medium leading-none">Partnerships</div>
                                       </div>
                                     </Link>
@@ -70,7 +69,6 @@ const Navbar = () => {
                                       className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors`}
                                     >
                                       <div className="flex items-center gap-2">
-                                        <Building2 className="h-4 w-4" />
                                         <div className="text-sm font-medium leading-none">About Us</div>
                                       </div>
                                     </Link>
@@ -88,34 +86,42 @@ const Navbar = () => {
 
 
                 // mortgage services
-                if (link.name === "Mortgage Services") {
+                if (link.name === "Services") {
                   return (
                     <li key={index}>
                       <NavigationMenu >
                         <NavigationMenuList>
                           <NavigationMenuItem className="p-0">
-
-                            <Link href={'/mortgage-services'}>
                               <NavigationMenuTrigger className="text-sm font-medium"> {link.name}</NavigationMenuTrigger>
-                            </Link>
-
                             <NavigationMenuContent className="p-0">
                               <ul className=" gap-3 p-2 md:w-[250px] md:grid-cols-1">
-                                {
-                                  mortgageservices.map((service) => (
+
                                     <li>
                                       <NavigationMenuLink asChild >
                                         <Link
-                                          href={`/mortgage-services/${service.id}`}
+                                          href={`/mortgage-services`}
                                           className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors`}
                                         >
                                           <div className="flex items-center gap-2">
-                                            <div className="text-sm font-medium leading-none">{service.title}</div>
+                                            <div className="text-sm font-medium leading-none">Mortgage Services</div>
                                           </div>
                                         </Link>
                                       </NavigationMenuLink>
                                     </li>
-                                  ))}
+
+                                    <li>
+                                      <NavigationMenuLink asChild >
+                                        <Link
+                                          href={`/cover-protection-services`}
+                                          className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors`}
+                                        >
+                                          <div className="flex items-center gap-2">
+                                            <div className="text-sm font-medium leading-none">Cover and Protection Services</div>
+                                          </div>
+                                        </Link>
+                                      </NavigationMenuLink>
+                                    </li>
+
 
                               </ul>
                             </NavigationMenuContent>
@@ -126,44 +132,6 @@ const Navbar = () => {
                   )
                 }
 
-
-                // coverprotection
-                if (link.name === "Cover & Protection") {
-                  return (
-                    <li key={index}>
-                      <NavigationMenu >
-                        <NavigationMenuList>
-                          <NavigationMenuItem className="p-0">
-                            <Link href={'/cover-protection-services'}>
-                              <NavigationMenuTrigger className="text-sm font-medium"> {link.name}</NavigationMenuTrigger>
-                            </Link>
-
-                            <NavigationMenuContent className="p-0">
-                              <ul className=" gap-3 p-2 md:w-[250px] md:grid-cols-1">
-                                {
-                                  coverprotection.map((service) => (
-                                    <li>
-                                      <NavigationMenuLink asChild >
-                                        <Link
-                                          href={`/cover-protection-services/${service.id}`}
-                                          className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors`}
-                                        >
-                                          <div className="flex items-center gap-2">
-                                            <div className="text-sm font-medium leading-none">{service.title}</div>
-                                          </div>
-                                        </Link>
-                                      </NavigationMenuLink>
-                                    </li>
-                                  ))}
-
-                              </ul>
-                            </NavigationMenuContent>
-                          </NavigationMenuItem>
-                        </NavigationMenuList>
-                      </NavigationMenu>
-                    </li>
-                  )
-                }
 
 
 

@@ -45,7 +45,6 @@ const MobileMenu = () => {
                           className="flex items-start gap-2 rounded-lg p-2 hover:bg-accent transition-colors"
                           onClick={() => setOpen(false)}
                         >
-                          <HandHeart className="h-4 w-4 mt-1 flex-shrink-0" />
                           <div className="space-y-1">
                             <div className="text-sm font-medium">Partnerships</div>                            </div>
                         </Link>
@@ -56,7 +55,6 @@ const MobileMenu = () => {
                           className="flex items-start gap-2 rounded-lg p-2 hover:bg-accent transition-colors"
                           onClick={() => setOpen(false)}
                         >
-                          <Building2 className="h-4 w-4 mt-1 flex-shrink-0" />
                           <div className="space-y-1">
                             <div className="text-sm font-medium">About Us</div>
                           </div>
@@ -69,31 +67,37 @@ const MobileMenu = () => {
             }
 
 
-            // mortgageservice
-            if (link.name === "Mortgage Services") {
+            if (link.name === "Services") {
               return (
                 <Accordion key={index} type="single" collapsible className="w-full">
                   <AccordionItem value="calculators" className="border-none">
-                    <Link href={'/mortgage-services'}>
-                      <AccordionTrigger className="text-base font-medium hover:text-primary py-0">
-                        {link.name}
-                      </AccordionTrigger>
-                    </Link>
+                    <AccordionTrigger className="text-base font-medium hover:text-primary py-0">
+                      {link.name}
+                    </AccordionTrigger>
                     <AccordionContent className="pt-2 pb-0">
                       <div className="flex flex-col space-y-3">
 
-                        {mortgageservices.map((service) => (
-                          <Link
+                        <Link
 
-                            href={`/mortgage-services/${service.id}`}
-                            className="flex items-start gap-2 rounded-lg p-2 hover:bg-accent transition-colors"
-                            onClick={() => setOpen(false)}
-                          >
-                            <div className="space-y-1">
-                              <div className="text-sm font-medium">{service.title}</div>                            </div>
-                          </Link>
+                          href={`/mortgage-services`}
+                          className="flex items-start gap-2 rounded-lg p-2 hover:bg-accent transition-colors"
+                          onClick={() => setOpen(false)}
+                        >
+                          <div className="space-y-1">
+                            <div className="text-sm font-medium">Mortgage Services</div>
+                          </div>
+                        </Link>
 
-                        ))}
+                        <Link
+
+                          href={`/cover-protection-services`}
+                          className="flex items-start gap-2 rounded-lg p-2 hover:bg-accent transition-colors"
+                          onClick={() => setOpen(false)}
+                        >
+                          <div className="space-y-1">
+                            <div className="text-sm font-medium">Cover and Protection Services</div>
+                          </div>
+                        </Link>
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -101,39 +105,6 @@ const MobileMenu = () => {
               )
             }
 
-
-
-            // coverprotection
-            if (link.name === "Cover & Protection") {
-              return (
-                <Accordion key={index} type="single" collapsible className="w-full">
-                  <AccordionItem value="calculators" className="border-none">
-                    <Link href={'/cover-protection-services'}>
-                      <AccordionTrigger className="text-base font-medium hover:text-primary py-0">
-                        {link.name}
-                      </AccordionTrigger>
-                    </Link>
-                    <AccordionContent className="pt-2 pb-0">
-                      <div className="flex flex-col space-y-3">
-
-                        {coverprotection.map((service) => (
-                          <Link
-
-                            href={`/cover-protection-services/${service.id}`}
-                            className="flex items-start gap-2 rounded-lg p-2 hover:bg-accent transition-colors"
-                            onClick={() => setOpen(false)}
-                          >
-                            <div className="space-y-1">
-                              <div className="text-sm font-medium">{service.title}</div>                            </div>
-                          </Link>
-
-                        ))}
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              )
-            }
             //   if (link.name === "Services") {
             //   return (
             //     <Accordion type="single" collapsible key={link.name}>
