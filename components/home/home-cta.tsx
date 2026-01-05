@@ -12,7 +12,7 @@ export function CTA() {
               Start supporting your employees today
             </h2>
             <p className="text-lg text-muted-foreground">
-              Discover how our mortgage and cover and protection service can enhance your existing employee approach
+              Discover how our mortgage and cover and protection service can enhance your existing employee
               benefits and support your workforce's financial wellbeing.
             </p>
             <Link href={'/contact-us'}>
@@ -22,11 +22,11 @@ export function CTA() {
             </Button>
             </Link>
           </div>
-          <div className="relative h-[400px] lg:h-[500px]">
+          <div className="relative h-[220px] md:h-[500px] lg:h-[320px]">
             <img
-              src="/boxes.jpg"
+              src="/couch-couple.jpg"
               alt="People with boxes moving house"
-              className="w-full h-full object-cover rounded-lg shadow-xl"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>

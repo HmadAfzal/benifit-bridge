@@ -4,7 +4,7 @@ export const coverprotection = [
         title: "Life Insurance",
         shortDescription: "Provide a lump sum to your loved ones, ensuring their financial security.",
         description:
-            "At Benefit Bridge, we understand how important it is to safeguard your employees’ families’ future. Life insurance provides financial protection for loved ones in the event of death, offering peace of mind during an emotionally difficult time.",
+            "At Benefit Bridge, we understand how important it is to safeguard your employees’ families future. Life insurance provides financial protection for loved ones in the event of death, offering peace of mind during an emotionally difficult time.",
         imageUrl: "/insurance.jpg",
         faqs: [
             {

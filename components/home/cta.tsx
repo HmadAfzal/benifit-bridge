@@ -11,7 +11,7 @@ const Cta = () => {
             <div className="max-w-3xl relative z-10">
               <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 md:mb-8 tracking-tight text-balance">Start supporting your employees today</h2>
               <p className="text-xl text-primary-foreground/80 mb-12 leading-relaxed">
-               Discover how our mortgage and cover and protection service can enhance your existing employee approach benefits and support your workforce’s financial wellbeing.
+               Discover how our mortgage and cover and protection service can enhance your existing employee benefits and support your workforce’s financial wellbeing.
               </p>
               <div className="flex flex-wrap gap-4">
                  <Link href={"/contact-us"}>

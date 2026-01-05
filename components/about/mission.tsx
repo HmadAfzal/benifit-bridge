@@ -16,7 +16,7 @@ const Mission = () => {
               Founded on Trust, Driven by Purpose
             </h2>
             <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-              In 2015, we noticed that many employees were struggling to navigate the complexities of the UK mortgage
+              In 2023, we noticed that many employees were struggling to navigate the complexities of the UK mortgage
               market and protection planning. Despite having great careers, their financial wellness was often
               overlooked.
             </p>

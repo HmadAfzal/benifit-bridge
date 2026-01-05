@@ -8,6 +8,10 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import { useState } from "react"
+import emailjs from '@emailjs/browser';
+import { toast } from "sonner"
+import { Loader2 } from "lucide-react"
 
 const formSchema = z.object({
   firstName: z.string().min(2, { message: "First name is required." }),
@@ -19,7 +23,10 @@ const formSchema = z.object({
   query: z.string().min(10, { message: "Please provide a description." }),
 })
 
+
 export function ContactForm() {
+  const [IsSubmitting, setIsSubmitting] = useState(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -34,7 +41,58 @@ export function ContactForm() {
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Contact Form Submission:", values)
+    setIsSubmitting(true)
+    const sairahServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID_SAIRAH
+    const sairahTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_SAIRAH
+    const sairahUserId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID_SAIRAH
+
+    const businessServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID_BUSINESS
+    const businessTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_BUSINESS
+    const businessUserId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID_BUSINESS
+
+    emailjs
+      .send(
+        sairahServiceId || "",
+        sairahTemplateId || "",
+        {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          companyName: values.companyName,
+          contactNumber: values.contactNumber,
+          businessEmail: values.businessEmail,
+          employeeCount: values.employeeCount,
+          query: values.query,
+        },
+        sairahUserId || ""
+      )
+       emailjs
+      .send(
+        businessServiceId || "",
+        businessTemplateId || "",
+        {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          companyName: values.companyName,
+          contactNumber: values.contactNumber,
+          businessEmail: values.businessEmail,
+          employeeCount: values.employeeCount,
+          query: values.query,
+        },
+        businessUserId || ""
+      )
+      .then(
+        (result) => {
+          toast.success("Message sent successfully.")
+          form.reset()
+        },
+        (error) => {
+          toast("Failed to send message. Please try again later.")
+          console.log(error)
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false)
+      })
   }
 
   return (
@@ -161,7 +219,7 @@ export function ContactForm() {
         <p className="text-sm text-gray-600 leading-relaxed">
           Benefit Bridge needs the contact information you provide to us to contact you about our products and
           services. For information on our privacy practices and commitment to protecting your privacy, please review our{" "}
-          <a href="#" className="text-brand-blue underline hover:no-underline transition-all">
+          <a href="/privacy-policy" className="text-primary underline hover:no-underline transition-all">
             Privacy Policy
           </a>
           .
@@ -171,7 +229,7 @@ export function ContactForm() {
           type="submit"
           className="px-10 py-6 rounded-[4px] font-bold text-lg"
         >
-          Submit
+         {IsSubmitting ? <Loader2 className="animate-spin"/> : "Submit"}
         </Button>
       </form>
     </Form>

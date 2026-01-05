@@ -2,8 +2,8 @@ import { Star } from "lucide-react"
 
 export function TrustRating() {
   return (
-    <section className="w-full bg-white py-10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-white">
+      <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-start gap-4 md:flex-row md:items-center md:gap-8">
           <div className="flex items-center">
             <span className="text-3xl font-bold tracking-tighter text-[#333333]">feefo</span>

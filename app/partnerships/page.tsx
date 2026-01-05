@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
+import { generateMetadata } from "@/lib/generate-metadata"
 
 const PARTNERS = [
   { name: "Partner 1", logo: "/1.jpeg" },
@@ -13,6 +14,9 @@ const PARTNERS = [
   { name: "Partner 7", logo: "/7.webp" },
 ]
 
+export const metadata=generateMetadata({title:"Partnerships"})
+
+
 export default function PartnershipsPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -22,8 +26,9 @@ export default function PartnershipsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Partnerships</h1>
             <p className="text-xl max-w-3xl opacity-90">
-              At Benefit Bridge, we're proud to be working in partnership with leading employers to provide tailored
-              mortgage advice and financial support to their employees.
+              At Benef it Bridge, we're proud to be working in partnership with leading employers
+              across various sectors to provide tailored mortgage advice and financial support to
+              their employees.
             </p>
           </div>
         </section>
@@ -31,10 +36,6 @@ export default function PartnershipsPage() {
         {/* Partners Grid */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-lg text-brand-dark mb-12 max-w-3xl">
-              We collaborate with a wide range of employers across various sectors, helping their workforce navigate
-              homeownership and financial planning with confidence.
-            </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center">
               {PARTNERS.map((partner, index) => (
                 <div
@@ -44,7 +45,7 @@ export default function PartnershipsPage() {
                   <img
                     src={partner.logo || "/placeholder.svg"}
                     alt={partner.name}
-                    className="max-h-16 w-auto object-contain"
+                    className="max-h-32 w-auto object-contain"
                   />
                 </div>
               ))}
@@ -65,11 +66,11 @@ export default function PartnershipsPage() {
                   benefits and support your workforce's financial wellbeing.
                 </p>
                 <Link href={'/contact-us'}>
-                <Button variant={'outline'} className="px-8 py-4 text-lg h-auto rounded-md group font-medium">
-                  Contact Us today to learn more
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                 </Link>
+                  <Button variant={'outline'} className="px-8 py-4 text-lg h-auto rounded-md group font-medium">
+                    Contact us today to learn more
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

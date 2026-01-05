@@ -1,40 +1,8 @@
-// "use client"
-
 import { Benefits } from "@/components/home/benefits";
 import { Engagement } from "@/components/home/engagement";
 import { Hero } from "@/components/home/hero";
 import { CTA } from "@/components/home/home-cta";
 import { Specialism } from "@/components/home/specialism";
-
-// import Hero from "@/components/home/hero"
-// import Services from "@/components/home/services"
-// import Stats from "@/components/home/stats"
-// import Process from "@/components/home/process"
-// import Featured from "@/components/home/featured"
-// import Faqs from "@/components/home/faqs"
-// import Testimonials from "@/components/home/testimonials"
-// import Cta from "@/components/home/cta"
-// import Wrapper from "@/components/global/wrapper"
-// import { Hero2 } from "@/components/home/hero2"
-
-// export default function HomePage() {
-
-//   return (
-//     <div className="min-h-screen bg-background text-foreground font-sans">
-//       <Hero2 />
-//       <Services />
-//       <Stats />
-//       <Process />
-//       <Featured />
-//       <Faqs />
-//       <Testimonials />
-//       <Cta />
-//     </div>
-//   )
-// }
-
-
-
 
 
 export default function Home() {
@@ -45,19 +13,27 @@ export default function Home() {
       <section className="py-20">
         <div className="container px-4 mx-auto max-w-5xl space-y-6">
           <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-brand-dark">
-            A Valuable Employee Benefit That Supports Financial Wellbeing
+            An Employee Benefit That Enhances Financial Security
           </h2>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
-              In today's economic climate, supporting employees' financial wellbeing is more important than ever. With
-              higher interest rates, rising mortgage costs and pressure to protect your assets and finances,
-              homeownership can be a major source of stress for some employees.
+              Supporting your employees' financial health has never been more critical. With
+              elevated interest rates, increasing mortgage payments, and the ongoing
+              challenge of safeguarding personal finances and assets, homeownership can
+              create significant anxiety for many staff members.
             </p>
             <p>
-              Our mortgage advisory and cover and protection service is designed specifically for employers who want to
-              offer meaningful support to their employees. This service seamlessly complements your existing employee
-              benefits and wellbeing strategy, adding a crucial financial wellbeing component to help your employees
-              successfully navigate homeownership and long-term financial planning.
+              Our mortgage advisory and cover and protection service is tailored for
+              employers looking to provide substantial support to their workforce. This
+              offering integrates smoothly with your current employee benefits and wellbeing
+              programs, introducing an essential financial wellness element that helps
+              employees confidently manage homeownership and plan for their financial
+              future.
+            </p>
+            <p>
+              We offer a dedicated employee benefit service to ensure your employees not
+              only have access to fee-free mortgage and cover and protection advice but also
+              educate and support them with their overall financial wellbeing.
             </p>
           </div>
         </div>

@@ -1,13 +1,14 @@
 import Cta from "@/components/home/cta"
+import Benifits from "@/components/services/benifits"
 import { ServiceCard } from "@/components/services/service-card"
-import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { benefits, features } from "@/constants/benifits"
+import { benefits } from "@/constants/benifits"
 import { coverprotection } from "@/constants/cover-protection"
-import { mortgageservices } from "@/constants/mortgage-services"
+import { generateMetadata } from "@/lib/generate-metadata"
 import { ArrowRight, CheckCircle2, TrendingUp, Users } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
+
+export const metadata=generateMetadata({title:"Cover & Protection Services"})
 
 export default function Page() {
 
@@ -34,12 +35,12 @@ export default function Page() {
                 <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-6">Tailored Cover and Protection Advice</h2>
                     <p className="max-w-3xl mx-auto text-gray-600 leading-relaxed text-sm md:text-base">
-                        At Benef it Bridge, we understand how important it is to safeguard your family&apos;s future.
+                        At Benefit Bridge, we understand how important it is to safeguard your family&apos;s future.
                         We also understand how devasting a serious health diagnosis can be. Having the right
                         insurance in place gives you peace of mind. Our experienced advisers are here to help
-                        you f ind the right cover and protection to meet your individual needs. We of fer expert
+                        you find the right cover and protection to meet your individual needs. We offer expert
                         advice and access to a wide panel of trusted insurers, so you can choose the right cover
-                        with conf idence.
+                        with confidence.
                     </p>
                 </div>
             </section>
@@ -49,9 +50,7 @@ export default function Page() {
                 <div className="max-w-7xl mx-auto px-4 md:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                         {coverprotection.map((service, index) => (
-                             <Link key={index} href={`/cover-protection-services/${service.id}`}>
                             <ServiceCard key={index} {...service} />
-                            </Link>
                         ))}
                     </div>
                 </div>
@@ -86,42 +85,9 @@ export default function Page() {
                 </div>
             </section>
 
-            <section className="py-24 px-4">
-                <div className="container mx-auto max-w-7xl">
-                    <div className="grid lg:grid-cols-1 gap-16 items-center">
-                        {/* Left: Benefits List */}
-                        <div className="space-y-8">
-                            <div>
-                                <Badge variant={'secondary'} className="mb-4">Why Choose Us</Badge>
-                                <h2 className="text-3xl md:text-4xl font-semibold mb-4 ">
-                                    Benefits That Matter
-                                </h2>
-                                <p className="text-lg text-muted-foreground text-pretty w-full">
-                                    We're committed to delivering exceptional value and peace of mind throughout your financial journey.
-                                </p>
-                            </div>
-                            <div className="space-y-6">
-                                {features.map((feature, index) => (
-                                    <div key={index} className="flex items-start gap-4 group">
-                                        <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                                            <TrendingUp className="w-5 h-5 text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className="font-bold text-lg mb-1">{feature.title}</h3>
-                                            <p className="text-sm text-muted-foreground">
-                                                {feature.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Benifits />
 
-
-            <section className="py-24 px-4 bg-gradient-to-b from-background to-muted/20">
+            {/* <section className="py-24 px-4 bg-gradient-to-b from-background to-muted/20">
                 <div className="container mx-auto max-w-7xl">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">Mortgage Services</h2>
@@ -152,7 +118,7 @@ export default function Page() {
                             })}
                     </div>
                 </div>
-            </section>
+            </section> */}
             <Cta />
 
         </div>

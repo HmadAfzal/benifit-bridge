@@ -1,4 +1,6 @@
 import { ContactForm } from "@/components/contact/form";
+import { generateMetadata } from "@/lib/generate-metadata";
+export const metadata=generateMetadata({title:"Contact Us"})
 
 export default function ContactPage() {
   return (
@@ -24,27 +26,20 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl space-y-8">
             <h2 className="text-4xl md:text-5xl text-brand-dark   leading-tight">
-              Let&apos;s talk employee benefits
+              Have questions about our employee benefits programme?
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Have questions about how to build, optimise or manage your employee benefits programme? Fill out the form
-              below and one of our experts will reach out to you to:
+              We'd love to discuss how our services can add value to your employee benefits
+              package. Whether you're looking to introduce this benefit for the first time, need more
+              information about how the service works, or want to explore tailored solutions for your
+              workforce, our team is here to help. We understand that every organisation is different,
+              so we'll work with you to create a programme that fits your company's needs and
+              supports your employees' financial wellbeing. Simply fill out the form below and one of
+              our experts will be in touch.
             </p>
-            <ul className="list-disc pl-5 space-y-4 text-brand-dark">
-              <li>
-                
-                Explore tailored solutions to support your team
-              </li>
-              <li>
-                Help with benefits design, benchmarking or administration
-              </li>
-              <li>
-                Discuss how we can align benefits with your business goals
-              </li>
-            </ul>
             <p className="text-lg text-gray-700 leading-relaxed">
-              We look forward to helping you deliver a benefits offering that works - for your people and for your
-              organisation.
+              We look forward to helping you deliver a benefits offering that works - for your people
+              and for your organisation.
             </p>
           </div>
 

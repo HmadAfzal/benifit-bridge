@@ -59,7 +59,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-               <Image src={'/brand.jpeg'} height={130} width={130} alt="horizonn" />
+              <Image src={'/brand.jpeg'} height={200} width={200} alt="horizonn" />
             </div>
           </div>
 
@@ -67,58 +67,13 @@ export function Footer() {
             <h3 className="text-lg font-bold">Useful information</h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/your-rights" className="hover:text-white transition-colors">
                   Your Rights
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/privacy-policy" className="hover:text-white transition-colors">
                   Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Cookie Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Site Links
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Investor Relations
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Modern Slavery and Human Trafficking
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  My Mortgage Account
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Gender Pay Gap
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Whistleblowing Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Anti-Bribery and Corruption
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Help and Support
                 </a>
               </li>
             </ul>
@@ -128,28 +83,28 @@ export function Footer() {
             <h3 className="text-lg font-bold">Contact</h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/contact-us" className="hover:text-white transition-colors">
                   Contact us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Media and press
+                <a href="/about" className="hover:text-white transition-colors">
+                  About us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Refer a Friend
+                <a href="/mortgage-services" className="hover:text-white transition-colors">
+                  Mortgage services
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Careers
+                <a href="/cover-protection-services" className="hover:text-white transition-colors">
+                  Cover & Protection services
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Data Request
+                <a href="/partnerships" className="hover:text-white transition-colors">
+                  Partnerships
                 </a>
               </li>
             </ul>
@@ -160,20 +115,26 @@ export function Footer() {
               <h3 className="text-lg font-bold">Follow us</h3>
               <div className="flex gap-4">
                 <a
-                  href="#"
-                  className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center hover:bg-white hover:text-footer-bg transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href=""
+                  className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center hover:bg-white hover:text-primary transition-all"
                 >
                   <Facebook size={20} />
                 </a>
                 <a
-                  href="#"
-                  className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center hover:bg-white hover:text-footer-bg transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href=""
+                  className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center hover:bg-white hover:text-primary transition-all"
                 >
                   <Instagram size={20} />
                 </a>
                 <a
-                  href="#"
-                  className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center hover:bg-white hover:text-footer-bg transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.linkedin.com/company/benefitbridge/"
+                  className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center hover:bg-white hover:text-primary transition-all"
                 >
                   <Linkedin size={20} />
                 </a>
@@ -202,10 +163,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-600 pt-8 space-y-4 text-xs text-gray-400">
-          <p>©2026 Benefit Bridge. All rights reserved.</p>
+        <div className="border-t border-gray-600 pt-8 space-y-4 text-xs text-gray-200">
+          <p>Benefit Bridge Ltd is a trading name of Brook Financial Services Limited which is an
+            appointed representative of Mortgage Advice Bureau Limited and Mortgage Advice
+            Bureau (Derby) Limited which are authorised and regulated by the Financial Conduct
+            Authority. </p>
+          <p>Benefit Bridge Ltd. Registered Office: **To be confirmed**: 13411462.</p>
           <p>
-            Benefit Bridge Limited is authorised and regulated by the Financial Conduct Authority.
+            © 2025 Benefit Bridge Ltd. All Rights Reserved.
           </p>
         </div>
       </div>

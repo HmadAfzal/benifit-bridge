@@ -3,9 +3,13 @@ import { Geist_Mono,Roboto } from "next/font/google"
 import "./globals.css"
 import  Navbar  from "@/components/navigation/navbar"
 import { Footer } from "@/components/navigation/footer"
+import { Toaster } from "@/components/ui/sonner"
+import { generateMetadata } from "@/lib/generate-metadata"
 
 const geist = Roboto({ subsets: ["latin"], variable: "--font-sans" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
+
+export const metadata = generateMetadata()
 
 export default function RootLayout({
   children,
@@ -18,6 +22,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+         <Toaster/>
       </body>
     </html>
   )

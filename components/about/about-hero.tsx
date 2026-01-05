@@ -19,8 +19,24 @@ const AboutHero = () => {
           Bridging the gap to financial security.
         </h1>
         <p className="text-balance text-muted-foreground lg:text-lg pb-4">
-          Benefit Bridge was founded with a clear mission: to make expert financial advice an essential part of the
-          modern workplace.
+          Benefit Bridge was founded with a clear mission: to make expert financial advice more
+          accessible.
+        </p>
+        <p className="text-balance text-muted-foreground lg:text-lg pb-4">
+          Benefit Bridge Ltd is trading name of Brook Financial Services which is an appointment
+          representative of Mortgage Advice Bureau. Mortgage Advice Bureau are the UK&apos;s
+          leading mortgage broker brand, winning over 200 national awards for the quality of
+          our advice and services during the last five years.
+        </p>
+
+        <p className="text-balance text-muted-foreground lg:text-lg pb-4">
+          We handled more than £26 billion worth of loans in 2024 and are currently the only
+          mortgage intermediary to have floated on the London Stock Exchange
+        </p>
+
+        <p className="text-balance text-muted-foreground lg:text-lg pb-6">
+          We have access to over 12,000 mortgage and 90 lenders, including deals which are
+          exclusive only to Mortgage Advice Bureau.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href={'/#services'}>
